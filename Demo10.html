@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .js-button{
+            color:lightpink;
+            background-color: black;
+        }
+        .istoggled{
+            color:black;
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <button class="js-button button1" onclick="checkToggled('.button1')">Gaming</button>
+    <button class="js-button button2" onclick="checkToggled('.button2')">Reading</button>
+    <button class="js-button button3" onclick="checkToggled('.button3')">Loser</button>
+    <script>
+        function checkToggled(selector){
+            let js_selector = document.querySelector(selector)
+            if(!js_selector.classList.contains('istoggled')){
+                turnOffToggle();
+                js_selector.classList.add('istoggled');
+            }  
+            else{
+                js_selector.classList.remove('istoggled');
+            }
+        }
+
+        function turnOffToggle(){
+            const button = document.querySelector('.istoggled')
+            if(button){
+                button.classList.remove('istoggled')
+            }
+        }
+    </script>
+</body>
+</html>
