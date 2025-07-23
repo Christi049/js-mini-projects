@@ -14,22 +14,19 @@
     <div class="added-todo-grid"></div>
 
     <script>
-        const todoList = JSON.parse(localStorage.getItem('todoList'))||[{
-            name: 'make dinner',
-            dueDate: '2022-12-22'
-        }];
+        const todoList = JSON.parse(localStorage.getItem('todoList'))||[]; //use a list of objects
 
         rendertodoList();
 
         function rendertodoList(){
-            let todoListHTML ='';
+            let todoListHTML =''; //clear the DOM in added-todo-grid to reflect deleted items are removed
 
             for(let i=0; i<todoList.length; i++){
                 const todoObject = todoList[i];
-                const {name , dueDate} = todoObject;
+                const {name , dueDate} = todoObject; //object destrucuring like const name = todoObject.name , here names must match
 
                 const html = `
-                <div style="display:flex; margin-top: 20px;">
+                <div style="display:flex; margin-top:20px;">
                     <div style="width:130px;">${name}</div>
                     <div style="width:130px;">${dueDate}</div>
                     <button onclick="
