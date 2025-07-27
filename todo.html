@@ -30,7 +30,7 @@
                     <div style="width:130px;">${name}</div>
                     <div style="width:130px;">${dueDate}</div>
                     <button onclick="
-                        todoList.splice(${i},1);
+                        todoList.splice(${i},1); //each button is associated with a value of "i"
                         rendertodoList();
                         saveToStorage();
                     ">Delete</button>
